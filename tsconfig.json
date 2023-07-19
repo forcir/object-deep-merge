@@ -1,0 +1,8 @@
+{
+    "extends": "@pqt/tsconfig",
+    "compilerOptions": {
+      "outDir": "dist",
+      "lib": ["ES2022", "DOM", "DOM.Iterable"]
+    }
+  }
+  

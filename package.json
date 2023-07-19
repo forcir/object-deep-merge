@@ -1,0 +1,44 @@
+{
+  "name": "object-deep-merge",
+  "version": "1.0.0",
+  "private": false,
+  "keywords": [
+    "typescript",
+    "typescript-library",
+    "type-safe",
+    "typesafe",
+    "object-merge",
+    "deep-merge",
+    "merge-object",
+    "merge-objects",
+    "deep-merge-object",
+    "object-merging",
+    "merge-options",
+    "object-deep-merge",
+    "object-deep-merging",
+    "deep-merging",
+    "deep-merge-objects"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "dev:test": "esrun src/test.ts",
+    "format": "prettier --write \"**/*.{js,json,md,ts,tsx}\""
+  },
+  "prettier": "@pqt/prettier-config",
+  "devDependencies": {
+    "@digitak/esrun": "3.2.24",
+    "@pqt/prettier-config": "1.0.1",
+    "@pqt/tsconfig": "1.0.1",
+    "prettier": "3.0.0",
+    "tsup": "7.1.0",
+    "typescript": "5.1.6"
+  }
+}
