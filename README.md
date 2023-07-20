@@ -22,3 +22,30 @@ yarn add object-deep-merge
 ```bash
 npm install object-deep-merge
 ```
+
+## Basic Usage
+
+```ts
+import { merge } from "object-deep-merge";
+```
+
+### Simply merge two objects, with no nested properties
+
+```ts
+const merged = merge({ foo: false }, { bar: true });
+
+console.log({ merged });
+```
+
+<details><summary>Output</summary>
+
+```json
+{
+  "merged": {
+    "foo": false,
+    "bar": true
+  }
+}
+```
+
+</details>

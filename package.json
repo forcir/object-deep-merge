@@ -2,6 +2,7 @@
   "name": "object-deep-merge",
   "version": "1.0.0",
   "private": false,
+  "description": "Strongly-typed deep and recursive object merging. Considers all nested levels of objects, arrays, sets and maps.",
   "keywords": [
     "typescript",
     "typescript-library",
@@ -19,7 +20,15 @@
     "deep-merging",
     "deep-merge-objects"
   ],
+  "homepage": "https://github.com/pqt/object-deep-merge",
+  "bugs": {
+    "url": "https://github.com/pqt/object-deep-merge/issues"
+  },
   "license": "MIT",
+  "author": {
+    "name": "Austin P",
+    "url": "https://github.com/pqt"
+  },
   "type": "module",
   "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
@@ -30,14 +39,20 @@
     "build": "tsup src/index.ts --format cjs,esm --dts --minify",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "dev:test": "esrun src/test.ts",
-    "format": "prettier --write \"**/*.{js,json,md,ts,tsx}\""
+    "format": "prettier --write \"**/*.{js,json,md,ts,tsx}\"",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --require ./scripts/suppress-experimental-vm-modules-warning.cjs' jest",
+    "test:coverage": "NODE_OPTIONS='--experimental-vm-modules --require ./scripts/suppress-experimental-vm-modules-warning.cjs' jest --coverage"
   },
   "prettier": "@pqt/prettier-config",
   "devDependencies": {
     "@digitak/esrun": "3.2.24",
     "@pqt/prettier-config": "1.0.1",
     "@pqt/tsconfig": "1.0.1",
+    "@types/jest": "29.5.3",
+    "jest": "29.6.1",
     "prettier": "3.0.0",
+    "ts-jest": "29.1.1",
+    "ts-node": "10.9.1",
     "tsup": "7.1.0",
     "typescript": "5.1.6"
   }
