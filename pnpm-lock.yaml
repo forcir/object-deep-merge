@@ -8,12 +8,12 @@ devDependencies:
   '@digitak/esrun':
     specifier: 3.2.24
     version: 3.2.24
-  '@pqt/prettier-config':
-    specifier: 1.0.1
-    version: 1.0.1(prettier@3.0.0)
-  '@pqt/tsconfig':
-    specifier: 1.0.1
-    version: 1.0.1(typescript@5.1.6)
+  '@forcir/prettier-config':
+    specifier: 1.0.0
+    version: 1.0.0
+  '@forcir/tsconfig':
+    specifier: 1.0.0
+    version: 1.0.0
   '@types/jest':
     specifier: 29.5.3
     version: 29.5.3
@@ -794,6 +794,14 @@ packages:
     dev: true
     optional: true
 
+  /@forcir/prettier-config@1.0.0:
+    resolution: {integrity: sha512-GdpfAdqN0tn8tXjfSLO20skS3BFCTyskz5OGMbxz0s/oxZdIvM/og7cOjhXzxuo+llozVdBgXl8fju43m88Cyw==}
+    dev: true
+
+  /@forcir/tsconfig@1.0.0:
+    resolution: {integrity: sha512-9CJENG24qlAkEhsOKK+ArRra8UcBVC9c6LoLtfmCOuNjQf6D/FA02sO4p3JYKb0kuOby0wzcDGVqUGv2wQmPyw==}
+    dev: true
+
   /@istanbuljs/load-nyc-config@1.1.0:
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
     engines: {node: '>=8'}
@@ -1083,22 +1091,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
-    dev: true
-
-  /@pqt/prettier-config@1.0.1(prettier@3.0.0):
-    resolution: {integrity: sha512-EJYiRzpFGqg1BN9cskzd2770DNkOjd/CxQf7fqhEuzcJpm8/A2crBzhTYlGzhGF2xhbhSBg6cpuaZpGiFZ8kIQ==}
-    peerDependencies:
-      prettier: '>=3.0.0'
-    dependencies:
-      prettier: 3.0.0
-    dev: true
-
-  /@pqt/tsconfig@1.0.1(typescript@5.1.6):
-    resolution: {integrity: sha512-jo91EcddbXCOM+LbBJRX3rg4yJcAz3OqTQf/kPrYCpSlztYEsth7kzSbr0ttaSbyC20TjankSTzlzyonv6zgMA==}
-    peerDependencies:
-      typescript: '>=5.1.6'
-    dependencies:
-      typescript: 5.1.6
     dev: true
 
   /@sinclair/typebox@0.27.8:
