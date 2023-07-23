@@ -6,7 +6,6 @@
     </picture>
 </div>
 <p align="center"><strong>Intelligently merge together two objects and an unlimited amount of nested fields. Maintain type-safety and/or enforce type definitions.</strong></p>
-
 <p align="center"></p>
 
 ## Install
