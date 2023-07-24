@@ -2,7 +2,8 @@
 <div align="center">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://cdn.forcir.com/oss/forcir-object-deep-merge/assets/images/logos/dark.png" height="64">
-        <img alt="Forcir Object Deep Merge" src="https://cdn.forcir.com/oss/forcir-object-deep-merge/assets/images/logos/light.png" height="64">
+        <source media="(prefers-color-scheme: light)" srcset="https://cdn.forcir.com/oss/forcir-object-deep-merge/assets/images/logos/light.png" height="64">
+        <img alt="Forcir Object Deep Merge Logo" src="https://cdn.forcir.com/oss/forcir-object-deep-merge/assets/images/logos/light.png" height="64">
     </picture>
 </div>
 <p align="center"><strong>Intelligently merge together two objects and an unlimited amount of nested fields. Maintain type-safety and/or enforce type definitions.</strong></p>
