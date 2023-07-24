@@ -6,7 +6,7 @@
         <img alt="Forcir Object Deep Merge Logo" src="https://cdn.forcir.com/oss/forcir-object-deep-merge/assets/images/logos/light.png" height="64">
     </picture>
 </div>
-<p align="center"><strong>Strongly-typed deep and recursive object merging including object, array, set and map values.</strong></p>
+<p align="center"><strong>Strongly-typed deep and recursive object merging with support for all value types.</strong></p>
 <p align="center"></p>
 
 ## Install
