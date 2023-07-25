@@ -41,10 +41,10 @@ console.log({ merged });
 
 ```json
 {
-  "merged": {
-    "foo": false,
-    "bar": true
-  }
+    "merged": {
+        "foo": false,
+        "bar": true
+    }
 }
 ```
 

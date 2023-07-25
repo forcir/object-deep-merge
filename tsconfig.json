@@ -1,8 +1,7 @@
 {
     "extends": "@forcir/tsconfig",
     "compilerOptions": {
-      "outDir": "dist",
-      "lib": ["ES2022", "DOM", "DOM.Iterable"]
+        "outDir": "dist",
+        "lib": ["ES2022", "DOM", "DOM.Iterable"]
     }
-  }
-  
+}
