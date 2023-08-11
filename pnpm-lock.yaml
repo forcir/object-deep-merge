@@ -15,8 +15,8 @@ devDependencies:
     specifier: 1.0.0
     version: 1.0.0
   '@forcir/tsconfig':
-    specifier: 1.0.0
-    version: 1.0.0
+    specifier: 1.0.2
+    version: 1.0.2
   '@types/jest':
     specifier: 29.5.3
     version: 29.5.3
@@ -870,8 +870,8 @@ packages:
     resolution: {integrity: sha512-GdpfAdqN0tn8tXjfSLO20skS3BFCTyskz5OGMbxz0s/oxZdIvM/og7cOjhXzxuo+llozVdBgXl8fju43m88Cyw==}
     dev: true
 
-  /@forcir/tsconfig@1.0.0:
-    resolution: {integrity: sha512-9CJENG24qlAkEhsOKK+ArRra8UcBVC9c6LoLtfmCOuNjQf6D/FA02sO4p3JYKb0kuOby0wzcDGVqUGv2wQmPyw==}
+  /@forcir/tsconfig@1.0.2:
+    resolution: {integrity: sha512-aN1nY6ivrr1nncuQDUgAF8l6NxnKqX78xM4nar7xuZ9cxTrZmHkR/VqgYjBEhR/EjoKmq7HHxvGn2xmwXuJMCQ==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.10:
