@@ -5,13 +5,13 @@
 const originalEmit = process.emit;
 
 process.emit = function (event, error) {
-  if (
-    event === "warning" &&
-    error.name === "ExperimentalWarning" &&
-    error.message.includes("VM Modules is an experimental feature and might change at any time")
-  ) {
-    return false;
-  }
+    if (
+        event === "warning" &&
+        error.name === "ExperimentalWarning" &&
+        error.message.includes("VM Modules is an experimental feature and might change at any time")
+    ) {
+        return false;
+    }
 
-  return originalEmit.apply(process, arguments);
+    return originalEmit.apply(process, arguments);
 };
