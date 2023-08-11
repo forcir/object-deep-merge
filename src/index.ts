@@ -1,30 +1,30 @@
-import { isMap, isObjectLiteral, isSet, objectKeys, type MergeableObject } from "./objects.js";
-
-const initialValue: MergeableObject = {};
+import { initialValue, isMap, isObjectLiteral, isSet, objectKeys, type MergeableObject } from "./objects.js";
 
 function merge<S extends MergeableObject = MergeableObject, R extends MergeableObject = S>(
     source: S,
-    target: S,
+    target_: S,
     ...targets: Array<S>
 ): R {
-    return [source, target, ...targets].reduce((source, target) => {
-        if (!isObjectLiteral(target)) {
+    let output = initialValue;
+
+    for (const item of [source, target_, ...targets]) {
+        if (!isObjectLiteral(item)) {
             throw new TypeError(`Expected all arguments to be object literals.`);
         }
 
-        const output = { ...source };
-        const keys = objectKeys(target);
+        const interimOutput = { ...output };
+        const keys = objectKeys(item);
 
-        keys.forEach((key) => {
-            const outputValue = output[key];
-            const targetValue = target[key];
+        for (const key of keys) {
+            const outputValue = interimOutput[key];
+            const targetValue = item[key];
 
             /**
              * The source object already contains this EXACT key value pair.
              * We can return early, nothing further to be done.
              */
             if (outputValue === targetValue) {
-                return;
+                continue;
             }
 
             /**
@@ -34,51 +34,51 @@ function merge<S extends MergeableObject = MergeableObject, R extends MergeableO
              * When it is done and returns it's merged object value, we will assign it to our own output at that key.
              */
             if (isObjectLiteral(outputValue) && isObjectLiteral(targetValue)) {
-                output[key] = merge(outputValue, targetValue);
-                return;
+                interimOutput[key] = merge(outputValue, targetValue);
+                continue;
             }
 
             /**
              * Both values are arrays, so we're going to:
-             *    - concatenate the values together
-             *    - dedupe using a Set
-             *    - Rebuild a new array from the set
+             *    - join the arrays together
+             *    - dedupe the array values using a set
+             *    - Rebuild a new array from the deduped set
              */
             if (Array.isArray(outputValue) && Array.isArray(targetValue)) {
-                output[key] = Array.from(new Set(outputValue.concat(targetValue)));
-                return;
+                interimOutput[key] = [...new Set([...outputValue, ...targetValue])];
+                continue;
             }
 
             /**
              * Merge Map
              */
             if (isMap(outputValue) && isMap(targetValue)) {
-                output[key] = new Map([...outputValue, ...targetValue]);
-                return;
+                interimOutput[key] = new Map([...outputValue, ...targetValue]);
+                continue;
             }
 
             /**
              * Merge Set
              */
             if (isSet(outputValue) && isSet(targetValue)) {
-                output[key] = new Set([...outputValue, ...targetValue]);
-                return;
+                interimOutput[key] = new Set([...outputValue, ...targetValue]);
+                continue;
             }
-
-            // TODO: Set + Map merging maybe???
 
             /**
              * Not an object, not an array,
              * We KNOW the key exists in the current target given we're in a loop.
              * We do not care what the previous value was (if even set at all) we're going to overwrite it.
              */
-            output[key] = targetValue;
-            return;
-        });
+            interimOutput[key] = targetValue;
+            continue;
+        }
 
-        return { ...output };
-    }, initialValue) satisfies R;
+        output = interimOutput;
+    }
+
+    return output;
 }
 
+export * from "./objects.js";
 export { merge };
-export type { MergeableObject };

@@ -1,6 +1,8 @@
 type MergeableObject = Record<string | number | symbol, any>;
 
-function isMap(input: MapConstructor | SetConstructor): input is MapConstructor {
+const initialValue: MergeableObject = {};
+
+function isMap<K = unknown, V = unknown>(input: any): input is Map<K, V> {
     return isMapInstance(input);
 }
 
@@ -8,7 +10,7 @@ function isMapInstance(input: any): boolean {
     return input instanceof Map;
 }
 
-function isSet(input: MapConstructor | SetConstructor): input is SetConstructor {
+function isSet<T = unknown>(input: any): input is Set<T> {
     return isSetInstance(input);
 }
 
@@ -24,5 +26,5 @@ function objectKeys<T extends object>(object: T): Array<keyof T> {
     return Object.keys(object) as Array<keyof T>;
 }
 
-export { isMap, isSet, isObjectLiteral, objectKeys };
+export { initialValue, isMap, isMapInstance, isSet, isSetInstance, isObjectLiteral, objectKeys };
 export type { MergeableObject };
