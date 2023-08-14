@@ -2,7 +2,7 @@ type MergeableObject = Record<string | number | symbol, any>;
 
 const initialValue: MergeableObject = {};
 
-function isMap<K = unknown, V = unknown>(input: any): input is Map<K, V> {
+function isMap<TKey = unknown, TValue = unknown>(input: any): input is Map<TKey, TValue> {
     return isMapInstance(input);
 }
 

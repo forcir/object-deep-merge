@@ -1,13 +1,13 @@
 import { initialValue, isMap, isObjectLiteral, isSet, objectKeys, type MergeableObject } from "./objects.js";
 
-function merge<S extends MergeableObject = MergeableObject, R extends MergeableObject = S>(
-    source: S,
-    target_: S,
-    ...targets: Array<S>
-): R {
+function merge<TSource extends MergeableObject = MergeableObject, TResult extends MergeableObject = TSource>(
+    source: TSource,
+    target: TSource,
+    ...targets: Array<TSource>
+): TResult {
     let output = initialValue;
 
-    for (const item of [source, target_, ...targets]) {
+    for (const item of [source, target, ...targets]) {
         if (!isObjectLiteral(item)) {
             throw new TypeError(`Expected all arguments to be object literals.`);
         }
