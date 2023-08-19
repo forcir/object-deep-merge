@@ -49,3 +49,111 @@ console.log({ merged });
 ```
 
 </details>
+
+## Typed Usage
+
+> [!NOTE]  
+> The `Merge` and `DeepMerge` types from `type-fest` are shipped from this library as a convenience. It is not unreasonable to use those types directly instead.
+
+The `merge` function accepts two optional type generics. `TData` and `TResult`.
+
+Without explicitly passing in types the function will infer the shape of the object(s) passed in.
+
+Passing in `TData` will validate the shape of the objects passed in. Passing in `TResult` will override the output type. While this should be used sparingly, it provides a convenient approach for correctly typing partial types into complete types.
+
+### Simple Example w/o Generics
+
+```ts
+type Data = {
+    name: string;
+    description: string;
+};
+
+const base: Data = { name: "object-deep-merge", description: "merge objects" };
+
+const overrides: Partial<Data> = { description: "merge objects, deeply" };
+
+const merged = merge(base, overrides);
+// function merge<Partial<Data>, Partial<Data>>(source: Partial<Data>, target: Partial<Data>, ...targets: Partial<Data>[]): Partial<Data>
+
+console.log({ merged });
+```
+
+<details><summary>Output</summary>
+
+```json
+{
+    "merged": {
+        "name": "object-deep-merge",
+        "description": "merge objects, deeply"
+    }
+}
+```
+
+</details>
+
+### Simple Example w/ `TData` Generic
+
+> Passing in TData will validate the shape of the objects passed in.
+
+```ts
+type Data = {
+    name: string;
+    description: string;
+};
+
+const base: Data = { name: "object-deep-merge", description: "merge objects" };
+
+const overrides: Partial<Data> = { description: "merge objects, deeply" };
+
+const merged: Partial<Data> = merge<Partial<Data>>(base, overrides);
+// function merge<Partial<Data>, Partial<Data>>(source: Partial<Data>, target: Partial<Data>, ...targets: Partial<Data>[]): Partial<Data>
+
+console.log({ merged });
+```
+
+<details><summary>Output</summary>
+
+```json
+{
+    "merged": {
+        "name": "object-deep-merge",
+        "description": "merge objects, deeply"
+    }
+}
+```
+
+</details>
+
+### Simple Example w/ `TData` and `TResult` Generics
+
+> Passing in `TResult` will override the output type. While this should be used sparingly, it provides a convenient approach for correctly typing partial types into complete types.
+
+```ts
+type Data = {
+    name: string;
+    description: string;
+};
+
+const base: Data = { name: "object-deep-merge", description: "merge objects" };
+
+const overrides: Partial<Data> = { description: "merge objects, deeply" };
+
+const merged: Data = merge<Partial<Data>, Data>(base, overrides);
+// function merge<Partial<Data>, Data>(source: Partial<Data>, target: Partial<Data>, ...targets: Partial<Data>[]): Data
+
+console.log({ merged });
+```
+
+<details><summary>Output</summary>
+
+```json
+{
+    "merged": {
+        "name": "object-deep-merge",
+        "description": "merge objects, deeply"
+    }
+}
+```
+
+</details>
