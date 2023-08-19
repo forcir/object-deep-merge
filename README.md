@@ -52,6 +52,16 @@ console.log({ merged });
 
 ## Typed Usage
 
+### `merge` Type Signature
+
+```ts
+function merge<TData extends MergeableObject = MergeableObject, TResult extends MergeableObject = TData>(
+    source: TData,
+    target: TData,
+    ...targets: Array<TData>
+): TResult;
+```
+
 > [!NOTE]  
 > The `Merge` and `DeepMerge` types from `type-fest` are shipped from this library as a convenience. It is not unreasonable to use those types directly instead.
 
