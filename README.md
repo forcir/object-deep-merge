@@ -54,6 +54,8 @@ console.log({ merged });
 
 ### `merge` Type Signature
 
+The `merge` function accepts two optional type generics. `TData` and `TResult`.
+
 ```ts
 function merge<TData extends MergeableObject = MergeableObject, TResult extends MergeableObject = TData>(
     source: TData,
@@ -63,9 +65,7 @@ function merge<TData extends MergeableObject = MergeableObject, TResult extends 
 ```
 
 > [!IMPORTANT]  
-> The `Merge` and `DeepMerge` types from `type-fest` are shipped from this library as a convenience. It is not unreasonable to use those types directly instead.
-
-The `merge` function accepts two optional type generics. `TData` and `TResult`.
+> The [`Merge`](https://github.com/sindresorhus/type-fest/blob/main/source/merge.d.ts) and [`MergeDeep`](https://github.com/sindresorhus/type-fest/blob/main/source/merge-deep.d.ts) types from [`type-fest`](https://github.com/sindresorhus/type-fest) are shipped from this library as a convenience. It is not unreasonable to use those types directly instead.
 
 Without explicitly passing in types the function will infer the shape of the object(s) passed in.
 
