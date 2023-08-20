@@ -62,14 +62,15 @@ function merge<TData extends MergeableObject = MergeableObject, TResult extends 
 ): TResult;
 ```
 
-> [!NOTE]  
+> [!IMPORTANT]  
 > The `Merge` and `DeepMerge` types from `type-fest` are shipped from this library as a convenience. It is not unreasonable to use those types directly instead.
 
 The `merge` function accepts two optional type generics. `TData` and `TResult`.
 
 Without explicitly passing in types the function will infer the shape of the object(s) passed in.
 
-Passing in `TData` will validate the shape of the objects passed in. Passing in `TResult` will override the output type. While this should be used sparingly, it provides a convenient approach for correctly typing partial types into complete types.
+-   Passing in `TData` will validate the shape of the objects passed in.
+-   Passing in `TResult` will override the output type. While this should be used sparingly, it provides a convenient approach for correctly typing partial types into complete types.
 
 ### Simple Example w/o Generics
 
@@ -109,6 +110,7 @@ console.log({ merged });
 
 ### Simple Example w/ `TData` Generic
 
+> [!NOTE]
 > Passing in TData will validate the shape of the objects passed in.
 
 ```ts
@@ -144,6 +146,7 @@ console.log({ merged });
 
 ### Simple Example w/ `TData` and `TResult` Generics
 
+> [!NOTE]
 > Passing in `TResult` will override the output type. While this should be used sparingly, it provides a convenient approach for correctly typing partial types into complete types.
 
 ```ts
