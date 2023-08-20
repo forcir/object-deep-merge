@@ -84,7 +84,12 @@ const base: Data = { name: "object-deep-merge", description: "merge objects" };
 const overrides: Partial<Data> = { description: "merge objects, deeply" };
 
 const merged = merge(base, overrides);
+
+// Type is inferred so the signature becomes:
 // function merge<Partial<Data>, Partial<Data>>(source: Partial<Data>, target: Partial<Data>, ...targets: Partial<Data>[]): Partial<Data>
+
+// TData    = Partial<Data>
+// TResult  = Data
 
 console.log({ merged });
 ```
@@ -117,7 +122,9 @@ const base: Data = { name: "object-deep-merge", description: "merge objects" };
 const overrides: Partial<Data> = { description: "merge objects, deeply" };
 
 const merged: Partial<Data> = merge<Partial<Data>>(base, overrides);
-// function merge<Partial<Data>, Partial<Data>>(source: Partial<Data>, target: Partial<Data>, ...targets: Partial<Data>[]): Partial<Data>
+
+// TData    = Partial<Data>
+// TResult  = Data
 
 console.log({ merged });
 ```
@@ -150,7 +157,9 @@ const base: Data = { name: "object-deep-merge", description: "merge objects" };
 const overrides: Partial<Data> = { description: "merge objects, deeply" };
 
 const merged: Data = merge<Partial<Data>, Data>(base, overrides);
-// function merge<Partial<Data>, Data>(source: Partial<Data>, target: Partial<Data>, ...targets: Partial<Data>[]): Data
+
+// TData    = Partial<Data>
+// TResult  = Data
 
 console.log({ merged });
 ```
