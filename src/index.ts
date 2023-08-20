@@ -1,9 +1,9 @@
 import { initialValue, isMap, isObjectLiteral, isSet, objectKeys, type MergeableObject } from "./objects.js";
 
-function merge<TSource extends MergeableObject = MergeableObject, TResult extends MergeableObject = TSource>(
-    source: TSource,
-    target: TSource,
-    ...targets: Array<TSource>
+function merge<TData extends MergeableObject = MergeableObject, TResult extends MergeableObject = TData>(
+    source: TData,
+    target: TData,
+    ...targets: Array<TData>
 ): TResult {
     let output = initialValue;
 
@@ -77,8 +77,9 @@ function merge<TSource extends MergeableObject = MergeableObject, TResult extend
         output = interimOutput;
     }
 
-    return output;
+    return output satisfies TResult;
 }
 
+export type { Merge, MergeDeep } from "type-fest";
 export * from "./objects.js";
 export { merge };
