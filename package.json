@@ -71,6 +71,6 @@
     },
     "packageManager": "pnpm@8.6.11",
     "dependencies": {
-        "type-fest": "4.2.0"
+        "type-fest": "4.3.2"
     }
 }

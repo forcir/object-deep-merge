@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   type-fest:
-    specifier: 4.2.0
-    version: 4.2.0
+    specifier: 4.3.2
+    version: 4.3.2
 
 devDependencies:
   '@digitak/esrun':
@@ -4623,8 +4623,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /type-fest@4.2.0:
-    resolution: {integrity: sha512-5zknd7Dss75pMSED270A1RQS3KloqRJA9XbXLe0eCxyw7xXFb3rd+9B0UQ/0E+LQT6lnrLviEolYORlRWamn4w==}
+  /type-fest@4.3.2:
+    resolution: {integrity: sha512-VpwuOgnTsQUUWi0id8Hl4/xiQ+OoaeJGe8dnFjzubJYe/lOc2/d1Qx/d3FqWR0FlpOG/cvukAXfB12A49Y4iiA==}
     engines: {node: '>=16'}
     dev: false
 
