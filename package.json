@@ -58,7 +58,7 @@
         "lint": "eslint \"**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}\"",
         "lint:fix": "eslint --fix \"**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}\"",
         "prepublishOnly": "run-s build",
-        "test": "NODE_OPTIONS='--experimental-vm-modules --require ./scripts/suppress-experimental-vm-modules-warning.cjs' jest",
+        "test": "NODE_OPTIONS='--experimental-vm-modules --require ./scripts/suppress-experimental-vm-modules-warning.cjs' jest --runInBand",
         "test:coverage": "NODE_OPTIONS='--experimental-vm-modules --require ./scripts/suppress-experimental-vm-modules-warning.cjs' jest --coverage"
     },
     "prettier": "@forcir/prettier-config",
