@@ -80,6 +80,5 @@ function merge<TData extends MergeableObject = MergeableObject, TResult extends 
     return output satisfies TResult;
 }
 
-export type { Merge, MergeDeep } from "type-fest";
 export * from "./objects.js";
 export { merge };
