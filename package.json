@@ -80,5 +80,6 @@
         "ts-node": "10.9.1",
         "tsup": "8.5.0",
         "typescript": "5.1.6"
-    }
+    },
+    "packageManager": "pnpm@10.17.0"
 }
