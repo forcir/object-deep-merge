@@ -18,8 +18,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2(prettier@3.0.2)
       '@forcir/tsconfig':
-        specifier: 1.0.4
-        version: 1.0.4
+        specifier: 1.0.5
+        version: 1.0.5
       '@types/jest':
         specifier: 29.5.14
         version: 29.5.14
@@ -546,8 +546,8 @@ packages:
     peerDependencies:
       prettier: '>=3.0'
 
-  '@forcir/tsconfig@1.0.4':
-    resolution: {integrity: sha512-G+y7/BDzkiLj0ob0cSSQckh+CAPwk6S+3N7EIDbAfng//ySPwES/TJoo9Bt/o+3o57VW0/ZTCyQSmnRw3UY+rg==}
+  '@forcir/tsconfig@1.0.5':
+    resolution: {integrity: sha512-hOq/TCEUdwBBIp8QnNbsJhUfWHzcoCHROTw9IEG2i8vGBGQlvjZh3v5fnZVJ6pxiH9NBONtLYi2EvXg/WOUptw==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -2526,6 +2526,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.3:
+    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -3339,7 +3344,7 @@ snapshots:
     dependencies:
       prettier: 3.0.2
 
-  '@forcir/tsconfig@1.0.4': {}
+  '@forcir/tsconfig@1.0.5': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -3793,7 +3798,7 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.7.2
+      semver: 7.7.3
       ts-api-utils: 1.4.3(typescript@5.1.6)
     optionalDependencies:
       typescript: 5.1.6
@@ -5781,6 +5786,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.7.2: {}
+
+  semver@7.7.3: {}
 
   set-function-length@1.2.2:
     dependencies:
