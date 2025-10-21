@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@digitak/esrun':
-        specifier: 3.2.24
-        version: 3.2.24
+        specifier: 3.2.26
+        version: 3.2.26
       '@forcir/eslint-config':
         specifier: 1.0.3
         version: 1.0.3(@typescript-eslint/parser@6.21.0(eslint@8.47.0)(typescript@5.1.6))(eslint@8.47.0)(typescript@5.1.6)
@@ -222,8 +222,8 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@digitak/esrun@3.2.24':
-    resolution: {integrity: sha512-HvD1eSuZVBaFZpKU/kl2rzDELCAbAnrFO2in855IrX15Zji4sdrekiEQph+eq5W5xjCyc254zx/Bh8RM2216mg==}
+  '@digitak/esrun@3.2.26':
+    resolution: {integrity: sha512-mL0bw7NhKVghp7mVsPwnAMhCn4NGAsk0KKFmAfnrYAZ/QCXR5xLXIYP82zLMjcsQag8DD6i1c+Yrm/57StYVzg==}
     engines: {node: '>=14.0'}
     hasBin: true
 
@@ -2526,6 +2526,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.3:
+    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -3146,7 +3151,7 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@digitak/esrun@3.2.24':
+  '@digitak/esrun@3.2.26':
     dependencies:
       '@digitak/grubber': 3.1.4
       chokidar: 3.6.0
@@ -3793,7 +3798,7 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.7.2
+      semver: 7.7.3
       ts-api-utils: 1.4.3(typescript@5.1.6)
     optionalDependencies:
       typescript: 5.1.6
@@ -5781,6 +5786,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.7.2: {}
+
+  semver@7.7.3: {}
 
   set-function-length@1.2.2:
     dependencies:
