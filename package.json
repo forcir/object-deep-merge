@@ -67,7 +67,7 @@
     },
     "devDependencies": {
         "@digitak/esrun": "3.2.24",
-        "@forcir/eslint-config": "1.0.3",
+        "@forcir/eslint-config": "1.1.0",
         "@forcir/prettier-config": "1.0.2",
         "@forcir/tsconfig": "1.0.4",
         "@types/jest": "29.5.14",
