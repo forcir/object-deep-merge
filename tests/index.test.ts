@@ -78,3 +78,25 @@ describe(`happy path, 2 objects (base + override)`, () => {
         });
     });
 });
+
+describe(`security`, () => {
+    test(`does not merge unsafe prototype pollution keys from parsed JSON`, () => {
+        const override = JSON.parse(`{"__proto__":{"isAdmin":true},"prototype":{"polluted":true}}`);
+        const merged = merge({ name: "guest" }, override) as Record<string, unknown>;
+
+        expect(Object.keys(merged)).toStrictEqual(["name"]);
+        expect(Object.hasOwn(merged, "isAdmin")).toBe(false);
+        expect(merged.isAdmin).toBeUndefined();
+        expect(merged.polluted).toBeUndefined();
+        expect(({} as Record<string, unknown>).isAdmin).toBeUndefined();
+    });
+
+    test(`does not merge nested unsafe prototype pollution keys from parsed JSON`, () => {
+        const override = JSON.parse(`{"options":{"enabled":true,"__proto__":{"isAdmin":true}}}`);
+        const merged = merge({ options: {} }, override) as { options: Record<string, unknown> };
+
+        expect(merged.options).toMatchObject({ enabled: true });
+        expect(Object.hasOwn(merged.options, "isAdmin")).toBe(false);
+        expect(merged.options.isAdmin).toBeUndefined();
+    });
+});
