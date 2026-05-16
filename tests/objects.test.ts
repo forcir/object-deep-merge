@@ -46,3 +46,11 @@ test(`isObjectLiteral works as expected`, () => {
 test(`objectKeys works as expected`, () => {
     expect(objectKeys({ repo: "object-deep-merge" })).toStrictEqual(["repo"]);
 });
+
+test(`objectKeys filters unsafe prototype pollution keys`, () => {
+    const input = JSON.parse(
+        `{"repo":"object-deep-merge","__proto__":{"polluted":true},"constructor":{"prototype":{"polluted":true}},"prototype":{"polluted":true}}`,
+    );
+
+    expect(objectKeys(input)).toStrictEqual(["repo"]);
+});

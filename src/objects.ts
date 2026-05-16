@@ -1,6 +1,7 @@
 type MergeableObject = Record<string | number | symbol, any>;
 
 const initialValue: MergeableObject = {};
+const unsafeKeys = new Set(["__proto__", "constructor", "prototype"]);
 
 function isMap<TKey = unknown, TValue = unknown>(input: any): input is Map<TKey, TValue> {
     return isMapInstance(input);
@@ -23,7 +24,7 @@ function isObjectLiteral(input: any): boolean {
 }
 
 function objectKeys<T extends object>(object: T): Array<keyof T> {
-    return Object.keys(object) as Array<keyof T>;
+    return Object.keys(object).filter((key) => !unsafeKeys.has(key)) as Array<keyof T>;
 }
 
 export { initialValue, isMap, isMapInstance, isSet, isSetInstance, isObjectLiteral, objectKeys };
