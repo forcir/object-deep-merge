@@ -28,7 +28,7 @@ importers:
         version: 1.1.0(@typescript-eslint/parser@8.32.1(eslint@9.26.0)(typescript@5.1.6))(eslint@9.26.0)(typescript@5.1.6)
       '@forcir/prettier-config':
         specifier: 1.0.2
-        version: 1.0.2(prettier@3.0.2)
+        version: 1.0.2(prettier@3.8.3)
       '@forcir/tsconfig':
         specifier: 1.0.5
         version: 1.0.5
@@ -48,8 +48,8 @@ importers:
         specifier: 4.1.5
         version: 4.1.5
       prettier:
-        specifier: 3.0.2
-        version: 3.0.2
+        specifier: 3.8.3
+        version: 3.8.3
       rimraf:
         specifier: 6.1.0
         version: 6.1.0
@@ -1771,7 +1771,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
@@ -2614,8 +2614,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@3.0.2:
-    resolution: {integrity: sha512-o2YR9qtniXvwEZlOKbveKfDQVyqxbEIWn48Z8m3ZJjBjcCmUy3xZGIv+7AkaeuaTr6yPXJjwv07ZWlsWbEy1rQ==}
+  prettier@3.8.3:
+    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3636,9 +3636,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@forcir/prettier-config@1.0.2(prettier@3.0.2)':
+  '@forcir/prettier-config@1.0.2(prettier@3.8.3)':
     dependencies:
-      prettier: 3.0.2
+      prettier: 3.8.3
 
   '@forcir/tsconfig@1.0.5': {}
 
@@ -6148,7 +6148,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@3.0.2: {}
+  prettier@3.8.3: {}
 
   pretty-format@29.7.0:
     dependencies:
